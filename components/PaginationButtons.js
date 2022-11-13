@@ -8,7 +8,7 @@ export default function PaginationButtons() {
 
   return (
     <div className="text-blue-700 flex px-9 pb-4 justify-between sm:justify-start sm:space-x-96 sm:px-0">
-      {/* Next 10 */}
+      {/* Previous 10 */}
       {startIndex > 10 && (
         <Link
           href={`/search?term=${router.query.term}&searchType=${
@@ -21,6 +21,7 @@ export default function PaginationButtons() {
           </div>
         </Link>
       )}
+      {/* Next 10 */}
       {startIndex < 90 && (
         <Link
           href={`/search?term=${router.query.term}&searchType=${
