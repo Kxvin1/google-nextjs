@@ -1,10 +1,18 @@
-import React from "react";
+import { useRouter } from "next/router";
 import Header from "../../components/Header";
 import { getProviders, signIn } from "next-auth/react";
 import Image from "next/image";
 
 // client side
 export default function signin({ providers }) {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const router = useRouter();
+
+  const homepage = (e) => {
+    e.preventDefault();
+    router.push(`/`);
+  };
+
   return (
     <>
       <Header />
@@ -16,7 +24,8 @@ export default function signin({ providers }) {
               alt="goog"
               width={300}
               height={100}
-              className="w-52 object-cover"
+              className="w-52 object-cover cursor-pointer"
+              onClick={homepage}
             />
             <p className="text-sm italtic my-10 text-center">
               Google Next.js Clone
