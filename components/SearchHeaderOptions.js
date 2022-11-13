@@ -1,0 +1,31 @@
+import { useRouter } from "next/router";
+import { SearchIcon, PhotographIcon } from "@heroicons/react/outline";
+
+import SearchHeaderOption from "./SearchHeaderOption";
+
+function SearchHeaderOptions() {
+  const router = useRouter();
+
+  return (
+    <div
+      className="flex space-x-8 select-none w-full justify-center text-sm text-gray-700 lg:pl-52 lg:justify-start
+    border-b
+    "
+    >
+      {/* regular search */}
+      <SearchHeaderOption
+        title="All"
+        Icon={SearchIcon}
+        selected={router.query.searchType === "" || !router.query.searchType}
+      />
+      {/* image search */}
+      <SearchHeaderOption
+        title="Images"
+        Icon={PhotographIcon}
+        selected={router.query.searchType === "image"}
+      />
+    </div>
+  );
+}
+
+export default SearchHeaderOptions;

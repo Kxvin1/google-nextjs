@@ -17,7 +17,7 @@ export default function Body() {
     if (!searchQuery.trim()) {
       return;
     } else {
-      router.push(`/search?term=${searchQuery.trim()}`);
+      router.push(`/search?term=${searchQuery.trim()}&searchType=`);
     }
   };
 
