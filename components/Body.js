@@ -21,6 +21,20 @@ export default function Body() {
     }
   };
 
+  const handleImFeelingLucky = async (e) => {
+    e.preventDefault();
+
+    const feelingLuckyQuery = await fetch(
+      "https://random-word-api.herokuapp.com/word?number=1"
+    ).then((response) => response.json());
+
+    if (!feelingLuckyQuery) {
+      return;
+    } else {
+      router.push(`/search?term=${feelingLuckyQuery}&searchType=`);
+    }
+  };
+
   return (
     <form className="flex flex-col items-center mt-40">
       <Image
@@ -46,7 +60,9 @@ export default function Body() {
         <button onClick={search} className="main-search-btn">
           Google Search
         </button>
-        <button className="main-search-btn">I&apos;m Feeling Lucky</button>
+        <button onClick={handleImFeelingLucky} className="main-search-btn">
+          I&apos;m Feeling Lucky
+        </button>
       </div>
     </form>
   );
