@@ -3,7 +3,7 @@ import { SearchIcon, PhotographIcon } from "@heroicons/react/outline";
 
 import SearchHeaderOption from "./SearchHeaderOption";
 
-function SearchHeaderOptions() {
+export default function SearchHeaderOptions() {
   const router = useRouter();
 
   return (
@@ -27,5 +27,3 @@ function SearchHeaderOptions() {
     </div>
   );
 }
-
-export default SearchHeaderOptions;

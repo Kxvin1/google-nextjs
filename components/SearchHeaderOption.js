@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-function SearchHeaderOption({ title, Icon, selected }) {
+export default function SearchHeaderOption({ title, Icon, selected }) {
   const router = useRouter();
 
   const selectTab = (title) => {
@@ -24,5 +24,3 @@ function SearchHeaderOption({ title, Icon, selected }) {
     </div>
   );
 }
-
-export default SearchHeaderOption;
