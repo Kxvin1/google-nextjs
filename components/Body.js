@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { SearchIcon } from "@heroicons/react/solid";
 import { MicrophoneIcon } from "@heroicons/react/solid";
 
-function Body() {
+export default function Body() {
   const router = useRouter();
 
   const searchInputRef = useRef(null);
@@ -51,5 +51,3 @@ function Body() {
     </form>
   );
 }
-
-export default Body;

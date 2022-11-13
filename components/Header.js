@@ -1,6 +1,6 @@
 import User from "./User";
 
-function Header() {
+export default function Header() {
   return (
     <header className="flex justify-between p-5 text-sm text-gray-700">
       {/* Left Part of Header */}
@@ -18,5 +18,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

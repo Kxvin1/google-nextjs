@@ -1,7 +1,7 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 
-function User() {
+export default function User({ className }) {
   const { data: session } = useSession();
 
   if (session) {
@@ -12,7 +12,7 @@ function User() {
           alt="user-img"
           height={50}
           width={50}
-          className="rounded-full cursor-pointer hover:bg-gray-200 p-1"
+          className={`rounded-full cursor-pointer hover:bg-gray-200 p-1 ${className}`}
           onClick={signOut}
         />
       </>
@@ -22,7 +22,7 @@ function User() {
       <>
         <button
           onClick={signIn}
-          className="hover:underline bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105 hover:shadow-md"
+          className={`hover:underline bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105 hover:shadow-md ${className}`}
         >
           Sign In
         </button>
@@ -30,5 +30,3 @@ function User() {
     );
   }
 }
-
-export default User;
