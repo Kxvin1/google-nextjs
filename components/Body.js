@@ -42,7 +42,7 @@ export default function Body() {
         alt="goog_index"
         width="300"
         height="100"
-        objectFit="cover"
+        // objectFit="cover"
       />
       <div
         className="flex w-full mt-5 mx-auto max-w-[90%] border border-gray-200 hover:shadow-lg

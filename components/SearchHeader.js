@@ -41,7 +41,7 @@ export default function SearchHeader() {
           alt="goog_search_results"
           width="120"
           height="40"
-          objectFit="contain"
+          // objectFit="contain"
         />
         <form
           className="flex border border-gray-200 rounded-full shadow-lg
