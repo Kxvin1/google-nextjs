@@ -24,7 +24,9 @@ export default function search({ results }) {
 }
 
 export async function getServerSideProps(context) {
-  const testData = true; // set to true when testing (so we don't keep making requests)
+  const startIndex = context.query.start || "1";
+
+  const testData = false; // set to true when testing (so we don't keep making requests)
   const data = testData
     ? Response
     : await fetch(
@@ -32,7 +34,7 @@ export async function getServerSideProps(context) {
           process.env.API_KEY
         }&cx=${process.env.CONTEXT_KEY}&q=${context.query.term}${
           context.query.searchType && "&searchType=image"
-        }`
+        }&start=${startIndex}`
       ).then((response) => response.json());
 
   return {
